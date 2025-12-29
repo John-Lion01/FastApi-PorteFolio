@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr"> 
+    <head>
+        <meta charset=UTF-8>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="John Lion PorteFolio">
+        <title>John - Lion | PorteFolio</title>
+        <link rel="stylesheet" href="static/css/base.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="#home">John - Lion</a>
+                <a href="#about" class="nav-item2">À Propos</a>
+                <a href="#projets" class="nav-itemr">Projets</a>
+                <a href="#skills-section" class="nav-item">Expertise</a>
+                <a href="#service" class="nav-item">Service</a>
+                <a href="#contact" class="nav-item3">Contact</a>
+
+            </nav>
+        </header>
+        
+        <section id="home">
+            <div>
+                <h1 class="t2">John Lion</h1>
+            </div>
+            <div>
+                <p class="text">
+                    {{ home_texte }}
+                </p>
+            </div>
+            <div class="dbtn">
+                <button>
+                    <a href="#projets">Mes Projets</a>
+                </button>
+                <button>
+                    <a href="#contact">Contact</a>
+                </button>
+            </div>
+        </section>
+
+        <section id="about">
+            <div>
+                <h1 class="t2">À propos de Moi</h1>
+            </div>
+            <div>
+                <p class="text start">
+                    {{ about_p1 }}
+                </p>
+                <p class="text middle">
+                    {{ about_p2 }}
+                </p>
+                <p class="text end">
+                    {{ about_p3 }}
+                </p>
+            </div>
+        </section>
+
+        <section id="projets">
+            <div>
+                <h1 class="t2">Mes Projets Réalisés</h1>
+            </div>
+            <div class="card-grid">
+                {% for item in projets %}
+                    <div class="card">
+                        <h3 class="p-tt">{{ item.title }}</h3>
+                        <p class="p-dd">
+                            {{ item.description }}
+                        </p>
+                        <div class="outils">
+                            {% for outil in item.outils %}
+                            <p>{{ outil }}</p>
+                            {% endfor %}
+                        </div>
+                        <div class="cbtn" >
+                            <button>
+                                <a href="{{ item.lien }}" target="_blank">Voir le Projet</a>
+                            </button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section id="skills-section">
+            <h2 class="section-title">Domaines d'expertise</h2>
+            <div class="skills-grid">
+                {% for skill in skills %}
+                <div class="skill-card">
+                    <h3>✔ {{ skill.title }}</h3>
+                    <p>{{ skill.description }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section id="expertise">
+            <div>
+                <h1 class="t2">Mes Compétence</h1>
+                <p class="sb-t">
+                    Transformer les idées en solutions numériques évolutives
+                </p>
+            </div>
+
+            <div class="lang-cont">
+                {% for lang in languages %}
+                    <div class="skill">
+                        <span>{{ lang.name }}</span>
+                        <div class="progres">
+                            <div class="progres-bar" style="width: {{ lang.level }}%;"></div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section id="service">
+            <div>
+                <h1 class="t2">Mes Services</h1>
+            </div>
+
+            <div class="card-grid">
+                {% for service in services %}
+                <div class="card">
+                    <h3 class="p-tt">{{ service.title }}</h3>
+                    <p class="p-dd">
+                        {{ service.description }}
+                    </p>
+                    <div class="outils">
+                        {% for outil in service.outils %}
+                        <p>{{ outil }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="cbtn" >
+                        <button>
+                            <a href="#let-talk">Demander mon avis</a>
+                        </button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="contact-container">
+                <!-- Infos -->
+                <div class="contact-info">
+                <h2>Informations de contact</h2>
+
+                <ul>
+                    <li>
+                        <strong>E-mail : </strong> 
+                        <a href="mailto:{{ contact.email }}">   {{ contact.email }}</a>
+                    </li>
+                    <li>
+                        <strong>GitHub : </strong> 
+                        <a href="{{ contact.github_link }}">   {{ contact.github }}</a>
+                    </li>
+                    <li>
+                        <strong>LinkedIn : </strong>
+                        <a href="{{ contact.linkedin_link }}">   {{ contact.linkedin }}</a>
+                    </li>
+                </ul>
+
+                <div class="contact-cta">
+                    <h3>Vous avez un projet ?</h3>
+                    <p>Discutons de votre idée et construisons une solution adaptée.</p>
+                    <a href="mailto:{{ contact.email }}" class="btn-primary">
+                        Envoyer un e-mail
+                    </a>
+                </div>
+            </div>
+
+                <!-- Formulaire -->
+                <div class="contact-form" id="let-talk-">
+                    <h2>Contactez-moi</h2>
+                    <p>
+                        Vous avez un projet, une idée ou une question ?
+                        Envoyez-moi un message et je vous répondrai rapidement.
+                    </p>
+
+                    <form method="post">
+                        <input type="text" placeholder="Nom et prénom" required  name="full_name"/>
+                        <input type="email" placeholder="Adresse e-mail" required name="email"/>
+                        <input type="text" placeholder="Sujet" name="sujet"/>
+                        <textarea placeholder="Décrivez votre projet..." rows="5" name="message" required></textarea>
+
+                        <button type="submit" class="btn-primary">
+                            <span>Envoyer le message</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <script src="/static/js/base.js"></script>
+        </section>
+
+        <div class="popup">
+            <ul></ul>
+        </div>
+        
+        <footer>
+            <p>© 2025 John Lion. Tous droits réservés.</p>
+        </footer>
+    </body>
+</html>
