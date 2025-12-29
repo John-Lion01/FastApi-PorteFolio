@@ -1,0 +1,7 @@
+id,title,description,outils,lien
+1,Développement de Sites Web sur Mesure,"Conception et développement de sites web modernes et performants, incluant le frontend et le backend. Solutions adaptées aux besoins spécifiques, avec une attention particulière à l’ergonomie, la sécurité et l’évolutivité.","[""python"", ""Django"", ""Ajax"", ""HTML"", ""CSS"", ""JavaScript""]", 
+2,Développement d’API REST,"Création d’API REST robustes et sécurisées pour applications web et mobiles, avec gestion de l’authentification, des permissions et de la communication client–serveur.","[""Python"",""Django"",""Django REst Framework"",""FastApi""]", 
+3,Conception d’Applications Desktop,"Développement d’applications desktop fiables et intuitives pour la gestion, l’automatisation et les outils métiers, avec interfaces graphiques claires et efficaces","[""Python"", ""Tkinter""]", 
+4,Développement de Jeux 2D,"Création de jeux 2D interactifs, intégrant logique de jeu, interfaces utilisateur, gestion des niveaux et sauvegarde des scores.","[""Python"", ""Pygame"", ""Tkinter""]", 
+5,Analyse de Données & Data Science,"Analyse, traitement et visualisation de données pour extraire des informations pertinentes, produire des graphiques clairs et soutenir la prise de décision.","[""Python"", ""Numpy"", ""Sympy"", ""Matplotlib"", ""Pandas""]", 
+6,Automatisation de Tâches,"Automatisation de tâches répétitives et chronophages afin d’optimiser les processus, améliorer la productivité et réduire les erreurs humaines.","[""pyhon""]", 
